@@ -15,7 +15,7 @@ app.get(":endpoint([\\/\\w\\?\\=]*)", function (req, res) {
   axios
     .get(endpoint)
     .then((response) => {
-      if (response.data) {
+      if (response.data.length !== 0) {
         res.json(response.data);
       } else {
         res.status(204).json({ error: "haay keeer.. bro bixwlenarawa" });
