@@ -18,7 +18,7 @@ app.get(":endpoint([\\/\\w\\?\\=]*)", function (req, res) {
       if (response.data.length !== 0) {
         res.json(response.data);
       } else {
-        res.status(204).json({ error: "haay keeer.. bro bixwlenarawa" });
+        res.status(404).json("Nothing found"); // Use a 404 status code for "Not Found"
       }
     })
     .catch((error) => {
